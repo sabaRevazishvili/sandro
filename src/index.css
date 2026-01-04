@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .bg-shop-now {
+    background-image: url("./assets/images/sandro-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100dvh;
+  }
+}
+
+@layer components {
+  .button {
+    @apply text-white font-semibold backdrop-blur-xs bg-[rgba(255,255,255,0.455)] px-7 py-3 rounded-md;
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react";
-import sandrobg from "../../assets/images/sandro-bg.jpg";
 import { Link } from "react-router-dom";
 
 const ShopNow = () => {
   return (
-    <div>
-      <img src={sandrobg} />
-      <Link to="../Main">Shop Now</Link>
+    <div className="bg-shop-now flex justify-center items-center">
+      <Link className="button" to="../Main">
+        Shop Now
+      </Link>
     </div>
   );
 };
