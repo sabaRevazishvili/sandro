@@ -1,4 +1,3 @@
-import { Shirt } from "lucide-react";
 
 export const routes = [
   { title: "Main", path: "/Main" },

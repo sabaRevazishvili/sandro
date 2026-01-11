@@ -1,21 +1,18 @@
 import React from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import sandro from "../../assets/images/sandro-bg.jpg";
+import { collection } from "../../constants/collection";
+import CollectionCard from "@/components/CollectionCard";
 
 const Collection = () => {
   return (
-    <div className="flex justify-center items-center">
-      {/* <h1 className="text-4xl">Collection</h1> */}
-      <Card className="overflow-hidden">
-        <img src={sandro} className="w-full h-64 object-cover" />
-        <CardContent className="p-4">
-          <h3 className="font-semibold text-lg">wazaaaaa</h3>
-          <p className="text-gray-600">$20</p>
-        </CardContent>
-        {/* <CardFooter>
-          <Button className="w-full">Add to Cart</Button>
-        </CardFooter> */}
-      </Card>
+    <div className="grid grid-cols-4 px-30 gap-5 py-5">
+      {collection.map((item) => (
+        <CollectionCard
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          image={item.image}
+        />
+      ))}
     </div>
   );
 };
