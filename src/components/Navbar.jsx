@@ -3,11 +3,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Shirt, LayoutGrid, MessageCircle, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
+
+import MobileNavbar from "./MobileNavbar";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="flex flex-row justify-between items-center py-4 px-20 border-b-2">
-      <ul className="flex flex-row justify-center items-center gap-7">
+      <button
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+        className=" md:hidden transition-transform duration-300"
+        style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+      >
+        {isOpen ? <X size={34} /> : <Menu size={34} />}
+      </button>
+      <MobileNavbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <ul className="hidden flex-row justify-center items-center gap-7 md:flex">
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -33,11 +49,12 @@ const Navbar = () => {
           </Tooltip>
         </li>
       </ul>
+
       <Link className="text-5xl font-semibold" to="/Main">
         RUWDRESS
       </Link>
       <ul className="flex flex-row justify-center items-center gap-7">
-        <li>
+        <li className="hidden md:flex">
           <Tooltip>
             <TooltipTrigger asChild>
               <Link to="/Contact">

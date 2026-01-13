@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Shirt, LayoutGrid, MessageCircle } from "lucide-react";
+
 
 const CollectionCard = ({ title, price, image }) => {
   return (
