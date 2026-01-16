@@ -15,7 +15,7 @@ import { routes } from "../constants/routes";
 const MobileNavbar = ({ isOpen, setIsOpen }) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent className="w-full mt-22">
+      <SheetContent className="w-full mt-17">
         <SheetHeader>
           <VisuallyHidden>
             <SheetTitle>Navigation Menu</SheetTitle>

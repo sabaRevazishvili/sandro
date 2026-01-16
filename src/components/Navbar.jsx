@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex flex-row justify-between items-center py-4 px-20 border-b-2">
+    <nav className="flex flex-row justify-between items-center py-4 px-5 lg:px-20 border-b-2">
       <button
         onClick={() => {
           setIsOpen(!isOpen);
@@ -50,7 +50,10 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <Link className="text-5xl font-semibold" to="/Main">
+      <Link
+        className="text-xl text-h1 font-semibold lg:text-5xl"
+        to="/Main"
+      >
         RUWDRESS
       </Link>
       <ul className="flex flex-row justify-center items-center gap-7">
