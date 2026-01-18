@@ -1,8 +1,7 @@
 import React from "react";
-// import { routes } from "../constants/routes";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { Shirt, LayoutGrid, MessageCircle, ShoppingCart } from "lucide-react";
+import { Heart, Handbag, Layers2, Phone } from "lucide-react";
 import { Menu, X } from "lucide-react";
 
 import MobileNavbar from "./MobileNavbar";
@@ -12,7 +11,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex flex-row justify-between items-center py-4 px-5 lg:px-20 border-b-2">
+    <nav
+      style={{ left: "50%", transform: "translateX(-50%)" }}
+      className="bg-white w-full fixed top-0 flex flex-row justify-between items-center py-4 px-5 lg:px-20 border-b-2"
+    >
       <button
         onClick={() => {
           setIsOpen(!isOpen);
@@ -20,7 +22,11 @@ const Navbar = () => {
         className=" md:hidden transition-transform duration-300"
         style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
       >
-        {isOpen ? <X size={34} /> : <Menu size={34} />}
+        {isOpen ? (
+          <X className="w-6 h-6 sm:w-8 sm:h-8" />
+        ) : (
+          <Menu className="w-6 h-6 sm:w-8 sm:h-8" />
+        )}
       </button>
       <MobileNavbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <ul className="hidden flex-row justify-center items-center gap-7 md:flex">
@@ -28,7 +34,7 @@ const Navbar = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link to="/Shop">
-                <Shirt size={34} />
+                <Handbag className="w-8 h-8" />
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -40,7 +46,7 @@ const Navbar = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link to="/Collection">
-                <LayoutGrid size={34} />
+                <Layers2 className="w-8 h-8" />
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -50,10 +56,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <Link
-        className="text-xl text-h1 font-semibold lg:text-5xl"
-        to="/Main"
-      >
+      <Link className="text-h1 font-semibold" to="/Main">
         RUWDRESS
       </Link>
       <ul className="flex flex-row justify-center items-center gap-7">
@@ -61,7 +64,7 @@ const Navbar = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link to="/Contact">
-                <MessageCircle size={34} />
+                <Phone className="w-8 h-8" />
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -72,7 +75,7 @@ const Navbar = () => {
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
-              <ShoppingCart size={34} />
+              <Heart className="w-6 h-6 sm:w-8 sm:h-8" />
             </TooltipTrigger>
             <TooltipContent>
               <p>Cart</p>

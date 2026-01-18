@@ -1,9 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shirt, LayoutGrid, MessageCircle } from "lucide-react";
 
-
-const CollectionCard = ({ title, price, image }) => {
+const ShopCard = ({ title, price, image }) => {
   return (
     <Card className="overflow-hidden">
       <img src={image} className="w-full h-80 object-cover" />
@@ -15,4 +13,4 @@ const CollectionCard = ({ title, price, image }) => {
   );
 };
 
-export default CollectionCard;
+export default ShopCard;

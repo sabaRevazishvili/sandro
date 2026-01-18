@@ -1,7 +1,7 @@
-import { Shirt, LayoutGrid, MessageCircle } from "lucide-react";
+import { Handbag, Phone, Layers2 } from "lucide-react";
 
 export const routes = [
-  { title: "Collection", path: "/Collection", icon: LayoutGrid },
-  { title: "Shop", path: "/Shop", icon: Shirt },
-  { title: "Contact", path: "./Contact", icon: MessageCircle },
+  { title: "Collection", path: "/Collection", icon: Layers2 },
+  { title: "Shop", path: "/Shop", icon: Handbag },
+  { title: "Contact", path: "./Contact", icon: Phone },
 ];

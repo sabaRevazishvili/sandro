@@ -11,7 +11,9 @@ function App() {
   const location = useLocation();
   return (
     <>
-      {location.pathname !== "/" && <Navbar />}
+      {location.pathname !== "/" && location.pathname !== "/Contact" && (
+        <Navbar />
+      )}
       <Routes>
         <Route element={<ShopNow />} path="/" />
         <Route element={<Main />} path="/Main" />
