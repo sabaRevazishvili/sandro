@@ -6,9 +6,11 @@ import { Menu, X } from "lucide-react";
 
 import MobileNavbar from "./MobileNavbar";
 import { useState } from "react";
+import Cart from "./Cart";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isOpenCart, setIsOpenCart] = useState(false);
 
   return (
     <nav
@@ -17,18 +19,18 @@ const Navbar = () => {
     >
       <button
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsOpenMenu(!isOpenMenu);
         }}
         className=" md:hidden transition-transform duration-300"
-        style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+        style={{ transform: isOpenMenu ? "rotate(90deg)" : "rotate(0deg)" }}
       >
-        {isOpen ? (
+        {isOpenMenu ? (
           <X className="w-6 h-6 sm:w-8 sm:h-8" />
         ) : (
           <Menu className="w-6 h-6 sm:w-8 sm:h-8" />
         )}
       </button>
-      <MobileNavbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileNavbar isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
       <ul className="hidden flex-row justify-center items-center gap-7 md:flex">
         <li>
           <Tooltip>
@@ -75,7 +77,21 @@ const Navbar = () => {
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Heart className="w-6 h-6 sm:w-8 sm:h-8" />
+              <button
+                onClick={() => {
+                  setIsOpenCart(!isOpenCart);
+                }}
+                className="transition-transform duration-300"
+                style={{
+                  transform: isOpenCart ? "rotate(90deg)" : "rotate(0deg)",
+                }}
+              >
+                {isOpenCart ? (
+                  <X className="w-6 h-6 sm:w-8 sm:h-8" />
+                ) : (
+                  <Heart className="w-6 h-6 sm:w-8 sm:h-8" />
+                )}
+              </button>
             </TooltipTrigger>
             <TooltipContent>
               <p>Cart</p>
@@ -83,6 +99,7 @@ const Navbar = () => {
           </Tooltip>
         </li>
       </ul>
+      <Cart isOpen={isOpenCart} setIsOpen={setIsOpenCart} />
     </nav>
   );
 };
