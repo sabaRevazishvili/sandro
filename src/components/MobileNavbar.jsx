@@ -9,7 +9,6 @@ import {
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Link } from "react-router-dom";
 
-import { Button } from "@/components/ui/button";
 import { routes } from "../constants/routes";
 const MobileNavbar = ({ isOpen, setIsOpen }) => {
   return (
@@ -22,23 +21,17 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
           <VisuallyHidden>
             <SheetTitle>Navigation Menu</SheetTitle>
           </VisuallyHidden>
-          <SheetDescription className="flex flex-col px-0">
+          <SheetDescription className="flex flex-col items-start px-0">
             {routes.map((route) => (
-              <Button
+              <Link
                 key={route.title}
-                variant="ghost"
-                className="justify-start gap-3 px-5!"
-                asChild
+                to={route.path}
+                onClick={() => setIsOpen(false)}
+                className="button gap-4 text-black "
               >
-                <Link
-                  to={route.path}
-                  onClick={() => setIsOpen(false)}
-                  className="flex "
-                >
-                  <route.icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                  {route.title}
-                </Link>
-              </Button>
+                <route.icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                {route.title}
+              </Link>
             ))}
           </SheetDescription>
         </SheetHeader>
