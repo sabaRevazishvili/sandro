@@ -12,16 +12,16 @@ const Cart = ({ isOpen, setIsOpen }) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetContent
-        className="w-full"
-        style={{ top: "clamp(4rem, 3.75rem + 1.5vw, 5rem)" }}
+        className="w-full max-w-full lg:max-w-1/3  "
+        style={{
+          top: "calc(clamp(1.5rem, 0.75rem + 2.5vw, 3.5rem) * 1.2 + 2rem + 2px)",
+        }}
         side="right"
       >
-        <SheetHeader className="p-0">
-          <VisuallyHidden>
-            <SheetTitle>Navigation Menu</SheetTitle>
-          </VisuallyHidden>
+        <SheetHeader className="">
+          <SheetTitle>Cart</SheetTitle>
           <SheetDescription className="flex flex-col items-start px-0">
-            cart
+            <h2>Your Cart Is Empty</h2>
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
