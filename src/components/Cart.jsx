@@ -21,7 +21,7 @@ const Cart = ({ isOpen, setIsOpen }) => {
         <SheetHeader className="">
           <SheetTitle>Cart</SheetTitle>
           <SheetDescription className="flex flex-col items-start px-0">
-            <h2>Your Cart Is Empty</h2>
+            Your Cart Is Empty
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
