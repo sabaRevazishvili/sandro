@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav
       style={{ left: "50%", transform: "translateX(-50%)" }}
-      className="bg-white w-full fixed top-0 flex flex-row justify-between items-center py-4 px-5 lg:px-20 border-b-2"
+      className="bg-white w-full fixed top-0 flex flex-row justify-between items-center py-4 px-5 lg:px-20 border-b-2 z-100"
     >
       <button
         onClick={() => {
@@ -30,7 +30,6 @@ const Navbar = () => {
           <Menu className="w-6 h-6 sm:w-8 sm:h-8" />
         )}
       </button>
-      <MobileNavbar isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
       <ul className="hidden flex-row justify-center items-center gap-7 md:flex">
         <li>
           <Tooltip>
@@ -39,7 +38,7 @@ const Navbar = () => {
                 <Handbag className="w-8 h-8" />
               </Link>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="z-100">
               <p>Shop</p>
             </TooltipContent>
           </Tooltip>
@@ -51,13 +50,12 @@ const Navbar = () => {
                 <Layers2 className="w-8 h-8" />
               </Link>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="z-100">
               <p>Collection</p>
             </TooltipContent>
           </Tooltip>
         </li>
       </ul>
-
       <Link className="text-h1 font-semibold" to="/Main">
         RUWDRESS
       </Link>
@@ -69,7 +67,7 @@ const Navbar = () => {
                 <Phone className="w-8 h-8" />
               </Link>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="z-100">
               <p>contact</p>
             </TooltipContent>
           </Tooltip>
@@ -93,12 +91,13 @@ const Navbar = () => {
                 )}
               </button>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="hidden md:block z-100">
               <p>Cart</p>
             </TooltipContent>
           </Tooltip>
         </li>
       </ul>
+      <MobileNavbar isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
       <Cart isOpen={isOpenCart} setIsOpen={setIsOpenCart} />
     </nav>
   );
