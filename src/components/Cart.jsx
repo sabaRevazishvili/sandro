@@ -34,8 +34,8 @@ const Cart = ({ isOpen, setIsOpen }) => {
             </SheetDescription>
           </VisuallyHidden>
         </SheetHeader>
-        <div className="flex-1 overflow-y-auto mt-8 pr-2">
-          <div className="flex flex-col gap-4 p-5">
+        <div className="flex-1 overflow-y-auto mt-8 pr-0">
+          <div className="flex flex-col gap-4 p-0">
             {state.cart.length === 0 ? (
               <p className="text-center text-gray-500">No items yet</p>
             ) : (
