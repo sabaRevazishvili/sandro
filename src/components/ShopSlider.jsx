@@ -19,6 +19,9 @@ const ShopSlider = ({ imgs }) => {
     });
   }, [api]);
 
+  const handleArrowClick = (e) => {
+    e.stopPropagation();
+  };
   return (
     <div className="w-full h-100">
       <Carousel setApi={setApi} className="w-full">
@@ -33,17 +36,25 @@ const ShopSlider = ({ imgs }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:inline-flex left-4 border-0 bg-transparent hover:bg-transparent" />
-        <CarouselNext className="hidden md:inline-flex right-4 border-0 bg-transparent hover:bg-transparent" />{" "}
+        <div onClick={handleArrowClick}>
+          <CarouselPrevious className="hidden md:inline-flex left-4 border-0 bg-transparent hover:bg-transparent" />
+        </div>
+        <div onClick={handleArrowClick}>
+          <CarouselNext className="hidden md:inline-flex right-4 border-0 bg-transparent hover:bg-transparent" />
+        </div>{" "}
       </Carousel>
 
       {/* Pagination Dots - Same Size, Different Color */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-5">
         {imgs.map((_, index) => (
           <button
             key={index}
-            onClick={() => api?.scrollTo(index)}
-            className={`h-2 w-2 rounded-full transition-colors ${
+            onClick={(e) => {
+              e.stopPropagation();
+
+              api?.scrollTo(index);
+            }}
+            className={`h-1 w-1 rounded-full transition-colors ${
               index === current
                 ? "bg-primary"
                 : "bg-primary/30 hover:bg-primary/50"

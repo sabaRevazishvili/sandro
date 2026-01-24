@@ -15,7 +15,9 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetContent
         className="w-full"
-        style={{ top: "clamp(4rem, 3.75rem + 1.5vw, 5rem)" }}
+        style={{
+          top: "calc(clamp(1.5rem, 0.75rem + 2.5vw, 3.5rem) * 1.2 + 2rem + 2px)",
+        }}
       >
         <SheetHeader className="p-0">
           <VisuallyHidden>

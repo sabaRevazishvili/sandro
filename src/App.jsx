@@ -6,6 +6,7 @@ import Collection from "./pages/Collection/Collection";
 import Shop from "./pages/Shop/Shop";
 import Contact from "./pages/Contact/Contact";
 import ShopNow from "./pages/ShopNow/ShopNow";
+import Description from "./pages/Description/Description";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
         <Route element={<Contact />} path="/Contact" />
         <Route element={<Collection />} path="/Collection" />
         <Route element={<Shop />} path="/Shop" />
+        <Route element={<Description />} path="/Description/:id" />
       </Routes>
     </>
   );

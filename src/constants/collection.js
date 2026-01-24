@@ -11,6 +11,9 @@ export const collection = [
     price: 499,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 2,
@@ -18,6 +21,9 @@ export const collection = [
     price: 499,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 3,
@@ -25,6 +31,9 @@ export const collection = [
     price: 349,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 4,
@@ -32,6 +41,9 @@ export const collection = [
     price: 349,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 5,
@@ -39,6 +51,9 @@ export const collection = [
     price: 99,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 6,
@@ -46,6 +61,9 @@ export const collection = [
     price: 149,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 7,
@@ -53,6 +71,9 @@ export const collection = [
     price: 249,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 8,
@@ -60,6 +81,9 @@ export const collection = [
     price: 299,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
   {
     id: 9,
@@ -67,5 +91,8 @@ export const collection = [
     price: 279,
     image: sandro,
     sliderImgs: [dbd1, dbd2, dbd3, dbd4],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description:
+      "Its shaggy brushed knit texture seems alive, while bold vertical stripes repeat like an endless cycle of metamorphosis. Embroidered Reckless over the chest anchors we are here with you during  this chaos. ",
   },
 ];
