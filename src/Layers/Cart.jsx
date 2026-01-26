@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useCart } from "@/context/useCart";
-import CartCard from "./CartCard";
+import CartCard from "../components/CartCard";
 import { clearCartAction } from "@/context/actionCreator";
 
 const Cart = ({ isOpen, setIsOpen }) => {

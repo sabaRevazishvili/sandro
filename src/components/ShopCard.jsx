@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { addToCartAction } from "@/context/actionCreator";
 import { useCart } from "../context/useCart";
 import { Heart } from "lucide-react";
-import ShopSlider from "./ShopSlider";
+import Slider from "./Slider";
 
 const ShopCard = ({ item }) => {
   const { dispatch } = useCart();
@@ -19,12 +19,16 @@ const ShopCard = ({ item }) => {
       className="relative overflow-hidden flex flex-col items-center gap-6 rounded-xl border shadow-sm justify-center "
     >
       <div className="lg:hidden w-full">
-        <ShopSlider imgs={item.sliderImgs} />
+        <div className="w-full h-100">
+          <Slider imgs={item.sliderImgs} shouldWrap shop />
+        </div>
       </div>
 
       <div className="hidden lg:block w-full">
         {sliderIsOpen ? (
-          <ShopSlider imgs={item.sliderImgs} />
+          <div className="w-full h-100">
+            <Slider imgs={item.sliderImgs} shouldWrap shop />
+          </div>
         ) : (
           <img
             src={item.image}

@@ -8,8 +8,7 @@ import {
 import { Plus, Minus } from "lucide-react";
 
 const CartCard = ({ item }) => {
-  // eslint-disable-next-line no-unused-vars
-  const { state, dispatch } = useCart();
+  const { dispatch } = useCart();
 
   return (
     <div className="overflow-hidden flex flex-row items-center  gap-6 rounded-xl border shadow-sm justify-start ">
