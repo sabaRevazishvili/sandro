@@ -7,9 +7,13 @@ import Contact from "./pages/Contact/Contact";
 import ShopNow from "./pages/ShopNow/ShopNow";
 import Description from "./pages/Description/Description";
 // import Footer from "./Layers/Footer";
+import { useCart } from "./context/useCart";
+import { Toaster } from "@/components/ui/sonner";
 
 function App() {
   const location = useLocation();
+  const { state } = useCart();
+  console.log(state);
   return (
     <>
       {location.pathname !== "/" && location.pathname !== "/Contact" && (
@@ -24,6 +28,7 @@ function App() {
         <Route element={<Description />} path="/Description/:id" />
       </Routes>
       {/* <Footer /> */}
+      <Toaster />
     </>
   );
 }

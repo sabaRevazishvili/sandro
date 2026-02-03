@@ -18,7 +18,7 @@ const CartCard = ({ item }) => {
         <p className="text-gray-600 text-center">{item.price} GEL</p>
         <div className="flex flex-row gap-4">
           <p>quantity:</p>
-          <button onClick={() => dispatch(addToCartAction(item))}>
+          <button onClick={() => dispatch(addToCartAction(item, item.size))}>
             <Plus />
           </button>
           <p>{item.quantity}</p>
@@ -26,7 +26,7 @@ const CartCard = ({ item }) => {
             <Minus />
           </button>
         </div>
-
+        <p>size: {item.size}</p>
         <button onClick={() => dispatch(removeFromCartAction(item.id))}>
           remove
         </button>

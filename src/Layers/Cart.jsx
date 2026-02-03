@@ -41,7 +41,7 @@ const Cart = ({ isOpen, setIsOpen }) => {
             ) : (
               <>
                 {state.cart.map((item) => (
-                  <CartCard key={item.id} item={item} />
+                  <CartCard key={`${item.id}-${item.size}`} item={item} />
                 ))}
                 <button
                   onClick={() => dispatch(clearCartAction())}

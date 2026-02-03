@@ -5,10 +5,10 @@ import {
   DECREASE_QUANTITY,
 } from "./actions";
 
-const addToCartAction = (item) => {
+const addToCartAction = (item, size) => {
   return {
     type: ADD_TO_CART,
-    payload: item,
+    payload: { ...item, size },
   };
 };
 const removeFromCartAction = (id) => {

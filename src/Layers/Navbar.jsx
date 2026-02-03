@@ -5,10 +5,16 @@ import { Heart, Handbag, Layers2, Phone, Menu, X } from "lucide-react";
 import MobileNavbar from "./MobileNavbar";
 import Cart from "./Cart";
 import IconButton from "../components/IconButton";
+import { useCart } from "@/context/useCart";
 
 const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
+  const { state } = useCart();
+  const quantityCount = state.cart.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
 
   return (
     <nav className="bg-white w-full fixed top-0 flex flex-row justify-between items-center py-4 px-5 lg:px-20 border-b-2 left-1/2 -translate-x-1/2 z-100">
@@ -60,6 +66,7 @@ const Navbar = () => {
             cart={true}
             isOpenCart={isOpenCart}
             setItOpenCart={setIsOpenCart}
+            cartCount={quantityCount}
           />
         </li>
       </ul>

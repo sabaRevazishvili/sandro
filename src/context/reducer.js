@@ -14,14 +14,15 @@ const reducer = (state, action) => {
   switch (type) {
     case ADD_TO_CART: {
       const existingItem = state.cart.find(
-        (cartItem) => cartItem.id === payload.id,
+        (cartItem) =>
+          cartItem.id === payload.id && cartItem.size === payload.size,
       );
 
       if (existingItem) {
         return {
           ...state,
           cart: state.cart.map((cartItem) =>
-            cartItem.id === payload.id
+            cartItem.id === payload.id && cartItem.size === payload.size
               ? { ...cartItem, quantity: cartItem.quantity + 1 }
               : cartItem,
           ),
@@ -29,7 +30,10 @@ const reducer = (state, action) => {
       } else {
         return {
           ...state,
-          cart: [...state.cart, { ...payload, quantity: 1 }],
+          cart: [
+            ...state.cart,
+            { ...payload, quantity: 1, sizes: payload.size },
+          ],
         };
       }
     }
